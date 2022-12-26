@@ -1,6 +1,7 @@
 
 
 let id_timer;
+range=[];
 function move(deley) {
     
   let barTime = document.getElementById("BarTime");
@@ -33,20 +34,21 @@ function sleep (time){
                 return new Promise((resolve) => setTimeout(resolve, time));
               }
 let arrObj=[];
-let range=[];
 function getJson_data(){
 
   const xhr = new XMLHttpRequest();
-  xhr.onload = function() {
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
     arrObj = JSON.parse(this.responseText);
-    range = randomUniqueNum(arrObj.length-1);
+    randoom(arrObj.length);
     showQuestion(arrObj)
+    }
   }
   xhr.open("GET", "../assets/js/data.json", true);
   xhr.send();
 }
 let count = 0;
-let correct=null;
+let correct=0;
 let totalcorrect=0;
 function showQuestion(arrObj){
        if(count<arrObj.length){
@@ -69,41 +71,32 @@ function showQuestion(arrObj){
         document.getElementById("progress").innerHTML="";
                 document.getElementById("answers").innerHTML="";
                 document.getElementById("question").innerHTML="";
-                document.getElementById("answers").innerHTML=` <div class="container"><h1 class="correctAs">Your Score Is: ${totalcorrect}/${arrObj.length}</h1></div>`;
+                document.getElementById("answers").innerHTML=` <div class="container">
+                <h1 class="correctAs">Your Score Is: ${totalcorrect}/${arrObj.length}</h1>
+                <a href="quiz.html"><button class="button-6" role="button">Replay</button></a>
+                </div>`;
+                
       }
 }
 getJson_data();
 
-function randomUniqueNum(outputCount) {
-
-  let arr = []
-  for (let i = 0; i <= outputCount; i++) {
-    arr.push(i)
+function randoom(max){
+  let newnum;
+  for(let i=1;i<=max;i++){
+   newnum =  Math.floor(Math.random() * (max));
+   while (range.includes(newnum)){
+    newnum =  Math.floor(Math.random() * (max));
+   }
+   range.push(newnum);
   }
-
-  let result = [];
-
-  for (let i = 0; i <= outputCount; i++) {
-    const random = Math.floor(Math.random() * (outputCount - i));
-    result.push(arr[random]);
-    arr[random] = arr[outputCount - i];
-  }
-  return result;
-}
-function timerfail(){
-  sleep(1).then(() => {
-    move(30);
-    showQuestion(arrObj);
-});  
-
 }
 
 function checkAnswer(tag){
   if(correct==tag.id){
-    tag.setAttribute("class", " answer color-secces");
+    tag.setAttribute("class", " answer bg-green");
     totalcorrect+=1;
   }else{
-      tag.setAttribute("class", " answer color-fail");}
+      tag.setAttribute("class", " answer bg-red");}
   
  
   sleep(700).then(() => {
