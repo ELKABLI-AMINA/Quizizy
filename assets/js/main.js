@@ -2,6 +2,7 @@
 
 let id_timer;
 range=[];
+let incorrect=[];
 function move(deley) {
     
   let barTime = document.getElementById("BarTime");
@@ -59,7 +60,7 @@ function showQuestion(arrObj){
        
         document.getElementById("countquestion").innerText =(count+1)+"/"+arrObj.length;
           
-          for(let i=0;i<arrObj[range[count]].answer.length;i++){
+          for(let i=0;i<arrObj[range[count]].answer.length;i++){ // pour afficher les 4 réponses
             document.getElementById("answers").innerHTML+=`
             <div class="answer"  onclick="addSelected(this)" id="${i+1}">  ${arrObj[range[count]].answer[i]}                                  
             </div>
@@ -78,7 +79,7 @@ function showQuestion(arrObj){
                 <button class="button-7" onclick="focusex()">Explication</button>
                 </div>`;
                 document.getElementById("answers").innerHTML+=`<div  id="explicationn" class="explication">`;
-                for (let i = 0; i < arrObj.length; i++) {
+                for (let i  of incorrect) {
                   document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].answer[ arrObj[i].correct-1]} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
 
                  
@@ -101,18 +102,7 @@ function randoom(max){
   }
 }
 
-function checkAnswer(tag){
-  if(correct==tag.id){
-    tag.setAttribute("class", " answer bg-green");
-    totalcorrect+=1;
-  }else{
-      tag.setAttribute("class", " answer bg-red");}
-  
- 
-  sleep(700).then(() => {
-    showQuestion(arrObj);
-});  
-}
+
 
 let selected;
 let  addSelected = (tag)=>{
@@ -131,6 +121,7 @@ let checkcorerect = ()=>{
       document.getElementById(selected).setAttribute("class", "answer bg-green");
   }
   else{
+          incorrect.push(count-1);  // explication
           document.getElementById(selected).setAttribute("class", "answer bg-red");
           document.getElementById(correct).setAttribute("class", "answer bg-green");
     }
