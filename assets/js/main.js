@@ -58,13 +58,14 @@ function showQuestion(arrObj){
         document.getElementById("question").innerText =arrObj[range[count]].question;
        
         document.getElementById("countquestion").innerText =(count+1)+"/"+arrObj.length;
-      
+          
           for(let i=0;i<arrObj[range[count]].answer.length;i++){
             document.getElementById("answers").innerHTML+=`
-            <div class="answer"  onclick="checkAnswer(this)" id="${i+1}">  ${arrObj[range[count]].answer[i]}                                  
+            <div class="answer"  onclick="addSelected(this)" id="${i+1}">  ${arrObj[range[count]].answer[i]}                                  
             </div>
             `;
           }
+          document.getElementById("answers").innerHTML+=`<center><button class="button-8" onclick="checkcorerect()">Next</button></center>`
         count++;
        }
       else{
@@ -74,7 +75,16 @@ function showQuestion(arrObj){
                 document.getElementById("answers").innerHTML=` <div class="container">
                 <h1 class="correctAs">Your Score Is: ${totalcorrect}/${arrObj.length}</h1>
                 <a href="quiz.html"><button class="button-6" role="button">Replay</button></a>
+                <button class="button-7" onclick="focusex()">Explication</button>
                 </div>`;
+                document.getElementById("answers").innerHTML+=`<div  id="explicationn" class="explication">`;
+                for (let i = 0; i < arrObj.length; i++) {
+                  document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].answer[ arrObj[i].correct-1]} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
+
+                 
+                }
+                document.getElementById("answers").innerHTML+=`</div>`;
+                
                 
       }
 }
@@ -104,10 +114,34 @@ function checkAnswer(tag){
 });  
 }
 
-
-
-
-
+let selected;
+let  addSelected = (tag)=>{
+  selected=tag.id;
+  tag.setAttribute("class","answer bg-regulare");
+  let answers = document.getElementsByClassName("answer");
+  for(let answer of answers){
+    answer.setAttribute("class","answer");
+  }
+  tag.setAttribute("class","answer bg-regulare");
+}
+// check selected choices---------------------------
+let checkcorerect = ()=>{
+  if(selected ==correct){
+    totalcorrect+=1;
+      document.getElementById(selected).setAttribute("class", "answer bg-green");
+  }
+  else{
+          document.getElementById(selected).setAttribute("class", "answer bg-red");
+          document.getElementById(correct).setAttribute("class", "answer bg-green");
+    }
+  setTimeout(() => { if(count<arrObj.length){
+    move(29);}
+    showQuestion(arrObj);
+}, 700);
+}
+function focusex(){
+  document.getElementById('explicationn').scrollIntoView();
+}
 
 
 

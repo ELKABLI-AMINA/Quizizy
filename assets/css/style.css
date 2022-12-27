@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
 * {
   box-sizing: border-box;
 }
@@ -15,99 +15,43 @@ body {
   background-color: #f8f8f8;
   padding: 15px;
 }
-
 .quiz-app .quiz-info {
   display: flex;
   background-color: #fff;
   padding: 20px;
 }
-
 .quiz-app .quiz-info .category {
   flex: 1;
 }
-
 .quiz-app .quiz-info .count {
   flex: 1;
   text-align: right;
 }
-
 .quiz-app .quiz-area {
   background-color: #fff;
   padding: 20px 20px 0;
   margin-top: 15px;
 }
-
 .quiz-app .quiz-area h2 {
   margin: 0;
 }
-
 .quiz-app .answer-area {
   background-color: #fff;
   padding: 20px;
 }
-
 .quiz-app .answer-area .answer {
   background-color: #f9f9f9;
   padding: 15px;
 }
-
 .quiz-app .answer-area .answer:not(:last-child) {
   border-bottom: 1px solid #dfdfdf;
 }
-
-.quiz-app .answer-area .answer input[type=Radio]:checked + label {
-  color: #0075ff;
-}
-
-.quiz-app .answer-area .answer label {
-  cursor: pointer;
-  font-weight: bold;
-  color: #777;
-  font-size: 14px;
-  margin: left 5px;
-  position: relative;
-  top: -1px;
-}
-
 .quiz-app .bullets {
   border-top: 1px solid #dfdfdf;
   background-color: #fff;
   display: flex;
   padding: 20px;
   justify-content: space-between;
-}
-
-.quiz-app .bullets .spans {
-  flex: 1;
-  display: flex;
-}
-
-.quiz-app .bullets .spans span {
-  width: 20px;
-  height: 20px;
-  background-color: #ddd;
-  margin-right: 5px;
-  border-radius: 20%;
-}
-
-.quiz-app .bullets .spans span.on {
-  background-color: #0075ff;
-}
-
-.quiz-app .results span {
-  font-weight: bold;
-}
-
-.quiz-app .results span.bad {
-  color: #dc0a0a;
-}
-
-.quiz-app .results span.good {
-  color: #009688;
-}
-
-.quiz-app .results span.perfect {
-  color: #0075ff;
 }
 
 .fullScreen {
@@ -137,24 +81,6 @@ body {
   font-size: 3rem;
   font-weight: 700;
   color: rgb(248, 223, 32);
-}
-
-/* CSS */
-.button-5, .button-6 {
-  height: 50px;
-  width: 120px;
-  margin: 10px 25px;
-  border: none;
-  outline: none;
-  color: #e7f1fa;
-  background: linear-gradient(#bf8006, #f8d201);
-  border: 1px solid #f3d031;
-  border-radius: 20px 5px;
-  font-size: 18px;
-  cursor: pointer;
-  position: absolute;
-  top: 55%;
-  left: 42%;
 }
 
 .color-secces {
@@ -208,8 +134,42 @@ body {
   background-color: #11f355 !important;
 }
 
+.button-5, .button-7, .button-6 {
+  height: 50px;
+  width: 120px;
+  margin: 10px 25px;
+  border: none;
+  outline: none;
+  color: #e7f1fa;
+  background: linear-gradient(#bf8006, #f8d201);
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+}
+
 .button-6 {
   border: none;
+  left: 49%;
+  background: linear-gradient(#2065aa, #7cabfd);
+}
+
+.button-7 {
+  left: 38%;
+  background: linear-gradient(#2065aa, #7cabfd);
+}
+
+.button-8 {
+  height: 50px;
+  width: 120px;
+  margin: 10px 25px;
+  border: none;
+  outline: none;
+  color: #e7f1fa;
+  background: linear-gradient(#bf8006, #f8d201);
+  font-size: 18px;
+  cursor: pointer;
   background: linear-gradient(#2065aa, #7cabfd);
 }
 
@@ -223,4 +183,8 @@ body {
   top: 45%;
   left: 39%;
   color: #0075ff;
+}
+
+.bg-regulare {
+  background-color: #0075ff !important;
 }/*# sourceMappingURL=style.css.map */
