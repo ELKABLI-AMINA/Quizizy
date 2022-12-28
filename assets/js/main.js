@@ -8,15 +8,15 @@ function move(deley) {
   let barTime = document.getElementById("BarTime");
   let width = 100;
   let smout = 0.01;
-  if(deley <10) smout = 0.1;
+  if(deley <10) smout = 0.1;   
 
   newDellay = (deley*1000*smout)/100;
   clearInterval(id_timer);
   id_timer = setInterval(frame, newDellay);
   function frame() {
+
       if (width <=0) {
           clearInterval(id_timer);
-          timerfail();
           
           i = 0;
       } else {
@@ -54,18 +54,19 @@ let totalcorrect=0;
 function showQuestion(arrObj){
        if(count<arrObj.length){
         move(30);
-        correct =arrObj[range[count]].correct;
+        correct =arrObj[range[count]].correct; 
         document.getElementById("answers").innerHTML="";
         document.getElementById("question").innerText =arrObj[range[count]].question;
        
         document.getElementById("countquestion").innerText =(count+1)+"/"+arrObj.length;
           
-          for(let i=0;i<arrObj[range[count]].answer.length;i++){ // pour afficher les 4 réponses
+          for(let i=0;i<arrObj[range[count]].answer.length;i++){ 
             document.getElementById("answers").innerHTML+=`
             <div class="answer"  onclick="addSelected(this)" id="${i+1}">  ${arrObj[range[count]].answer[i]}                                  
             </div>
             `;
           }
+        
           document.getElementById("answers").innerHTML+=`<center><button class="button-8" onclick="checkcorerect()">Next</button></center>`
         count++;
        }
@@ -73,16 +74,46 @@ function showQuestion(arrObj){
         document.getElementById("progress").innerHTML="";
                 document.getElementById("answers").innerHTML="";
                 document.getElementById("question").innerHTML="";
-                document.getElementById("answers").innerHTML=` <div class="container">
+                let corectRange = (totalcorrect*100)/arrObj.length;
+                if(corectRange<=25){
+                  document.getElementById("answers").innerHTML=`
+                  <div class="img-center">
+                <img src="../assets/img/Frame-focus.png" class="img_vector center"  alt="">
+                <h3 class="missyou"> Focus more you can do it</h3> </div>`
+                ;
+
+                }else if(corectRange<=55){
+                  document.getElementById("answers").innerHTML=`
+                  <div class="img-center">
+                <img src="../assets/img/Frame-good.png"  alt="">
+                <h3 class="missyou"> Good job continue</h3> </div>`
+                ;
+
+                }
+                else if(corectRange<=90){
+                  document.getElementById("answers").innerHTML=`
+                  <div class="img-center">
+                <img src="../assets/img/Frame-exelent.png"   alt="">
+                <h3 class="missyou"> Exelent near to be Master</h3> </div>`
+                ;
+
+                }
+                else{
+                  document.getElementById("answers").innerHTML=`
+                  <div class="img-center">
+                  <img src="../assets/img/Frame-boos.png"  alt="">
+                    <h3 class="missyou"> You are the Master</h3> </div>`
+                  ;
+
+                }
+                document.getElementById("answers").innerHTML+=` <div class="container">
                 <h1 class="correctAs">Your Score Is: ${totalcorrect}/${arrObj.length}</h1>
                 <a href="quiz.html"><button class="button-6" role="button">Replay</button></a>
                 <button class="button-7" onclick="focusex()">Explication</button>
                 </div>`;
                 document.getElementById("answers").innerHTML+=`<div  id="explicationn" class="explication">`;
-                for (let i  of incorrect) {
-                  document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].answer[ arrObj[i].correct-1]} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
-
-                 
+                for (let i of incorrect) { // la valeur       // in (propriétés)
+                  document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question ${i}:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].answer[ arrObj[i].correct-1]} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
                 }
                 document.getElementById("answers").innerHTML+=`</div>`;
                 
@@ -102,10 +133,8 @@ function randoom(max){
   }
 }
 
-
-
 let selected;
-let  addSelected = (tag)=>{
+let  addSelected = (tag)=>{  // arrow function
   selected=tag.id;
   tag.setAttribute("class","answer bg-regulare");
   let answers = document.getElementsByClassName("answer");
@@ -116,16 +145,22 @@ let  addSelected = (tag)=>{
 }
 // check selected choices---------------------------
 let checkcorerect = ()=>{
-  if(selected ==correct){
-    totalcorrect+=1;
+
+    if(selected ==correct){
+      totalcorrect+=1;
       document.getElementById(selected).setAttribute("class", "answer bg-green");
+      var audio = new Audio('../assets/sound/bonneR.mp3');
+         audio.play();
+        
   }
   else{
-          incorrect.push(count-1);  // explication
+          incorrect.push(range[count-1]);  // explication                   
           document.getElementById(selected).setAttribute("class", "answer bg-red");
           document.getElementById(correct).setAttribute("class", "answer bg-green");
+          var audioE = new Audio('../assets/sound/Echeck.mp3');
+              audioE.play();
     }
-  setTimeout(() => { if(count<arrObj.length){
+  setTimeout(() => { if(count<arrObj.length){   
     move(29);}
     showQuestion(arrObj);
 }, 700);

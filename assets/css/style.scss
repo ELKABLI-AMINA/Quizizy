@@ -1,27 +1,32 @@
 @import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
-$color_1: #0075ff;
-$color_2: #777;
-$color_3: #dc0a0a;
-$color_4: #009688;
-$color_5: rgb(248, 223, 32);
-$color_6: #52e824;
-$color_7: rgb(245, 146, 32);
-$color_8: red;
-$color_9: #e7f1fa;
+
+$color_1  : #0075ff;
+$color_2  : #777;
+$color_3  : #dc0a0a;
+$color_4  : #009688;
+$color_5  : rgb(248, 223, 32);
+$color_6  : #52e824;
+$color_7  : rgb(245, 146, 32);
+$color_8  : red;
+$color_9  : #e7f1fa;
+$color_10  : #000;
+
+
 
 $font-family_1: Arial, Helvetica, sans-serif;
 $font-family_2: 'Shrikhand', cursive;
 
-$background-color_1: rgb(96,9,240);
-$background-color_2: #f8f8f8;
-$background-color_3: #fff;
-$background-color_4: #f9f9f9;
-$background-color_5: #ddd;
-$background-color_6: #0075ff;
-$background-color_7: #52e824;
-$background-color_8: #82C3EC;
-$background-color_9: #fc3249;
+$background-color_1 : rgb(96,9,240);
+$background-color_2 : #f8f8f8;
+$background-color_3 : #fff;
+$background-color_4 : #f9f9f9;
+$background-color_5 : #ddd;
+$background-color_6 : #0075ff;
+$background-color_7 : #52e824;
+$background-color_8 : #82C3EC;
+$background-color_9 : #fc3249;
 $background-color_10: #11f355;
+$background-color_11: #000;
 
 * {
 	box-sizing: border-box;
@@ -36,13 +41,14 @@ body {
 	width: 800px;
 	background-color: $background-color_2;
 	padding: 15px;
+
+	
 	.quiz-info {
 		display: flex;
 		background-color: $background-color_3;
 		padding: 20px;
-		.category {
-			flex: 1;
-		}
+		
+
 		.count {
 			flex: 1;
 			text-align: right;
@@ -59,12 +65,14 @@ body {
 	.answer-area {
 		background-color: $background-color_3;
 		padding: 20px;
+		border-radius: 2px;
 		.answer {
 			background-color: $background-color_4;
 			padding: 15px;
 			&:not(:last-child) {
 				border-bottom: 1px solid #dfdfdf;
 			}
+			border-radius: 10px;
 		
 		}
 	}
@@ -90,14 +98,14 @@ body {
 }
 ////// index 
  
-		body {
-			background-image: url("../cover.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 100%;
-			background-attachment: fixed;
-			background-position: center;
-		}
+body {
+                background-image: url("../cover.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
 	
 
 .welcome {
@@ -148,6 +156,7 @@ body {
 	background-color: $background-color_8 !important;
 	margin-top: 5px;
 	cursor: pointer;
+	
 }
 .bg-red {
 	background-color: $background-color_9 !important;
@@ -167,41 +176,81 @@ body {
 	cursor: pointer;
 	position: absolute;
 	top: 55%;
-	left: 45%;
+	left: 42%;
 }
 .button-6 {
 	@extend.button-5;
 	border: none;
+	top: 86%;
 	left: 49%;
 	background: linear-gradient(#2065aa, #7cabfd);
 }
 .button-7 {
 	@extend.button-5;
+	top: 86%;
 	left: 38%;
 	background: linear-gradient(#2065aa, #7cabfd);
 }
 .button-8 {
+	
 	height: 50px;
 	width: 120px;
 	margin: 10px 25px;
 	border: none;
 	outline: none;
 	color: $color_9;
-	background: linear-gradient(#bf8006, #f8d201);
 	font-size: 18px;
 	cursor: pointer;
 	background: linear-gradient(#2065aa, #7cabfd);
+
+	
 }
 .container {
 	height: 100vh;
+	text-align: center;
 }
 .correctAs {
 	margin: auto;
-	position: absolute;
-	top: 45%;
-	left: 39%;
 	color: $color_1;
 }
 .bg-regulare {
 	background-color: $background-color_6 !important;
 }
+.missyou{
+	font-size:large;
+	color: $background-color_6;
+	font-weight:1000;
+}
+.img-center{
+	margin: auto;
+	text-align: center;
+	align-items: center;
+	display: block;
+	width: 100%;
+}
+ul{
+	list-style: none;
+}
+
+.questionli{
+	background-color:$background-color_11;
+	color: white;
+	padding: 5px 21px;
+	border-radius: 25px;
+}
+.reponseli{
+    margin-top: 13px;
+    background-color:$background-color_1;
+    color: white;
+    padding: 5px 21px;
+    border-radius: 25px;
+}
+.explicationli{
+	margin-top: 13px;
+	background-color: #eee;
+	color:$color_10 ;
+	padding: 5px 21px;
+	border-radius: 25px;
+}
+
+        
