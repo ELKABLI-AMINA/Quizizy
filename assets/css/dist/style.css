@@ -5,7 +5,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(8, 35, 90);
+  background-color: #08235a;
 }
 
 .quiz-app {
@@ -74,7 +74,7 @@ body {
   font-family: "Shrikhand", cursive;
   font-size: 3rem;
   font-weight: 700;
-  color: rgb(248, 223, 32);
+  color: #f8df20;
 }
 
 .color-secces {
@@ -86,7 +86,7 @@ body {
 }
 
 .base-timer__label.orange {
-  color: rgb(245, 146, 32);
+  color: #f59220;
 }
 
 .base-timer__label.red {
@@ -231,7 +231,7 @@ ul {
 
 .reponseli {
   margin-top: 13px;
-  background-color: rgb(8, 35, 90);
+  background-color: #08235a;
   color: white;
   padding: 5px 21px;
   border-radius: 25px;
@@ -280,4 +280,4 @@ ul {
 }
 .btnn button:active {
   background-color: #ba7104;
-}/*# sourceMappingURL=style.css.map */
+}
