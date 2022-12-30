@@ -168,7 +168,11 @@ let checkcorerect = ()=>{
 function focusex(){
   document.getElementById('explicationn').scrollIntoView();
 }
-
+let name =document.getElementById("name");
+let nom =document.getElementById("nom");
+function setname(){
+  nom.value=name.value;
+}
 
 
 

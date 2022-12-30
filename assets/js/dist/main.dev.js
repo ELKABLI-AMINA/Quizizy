@@ -193,3 +193,10 @@ var checkcorerect = function checkcorerect() {
 function focusex() {
   document.getElementById('explicationn').scrollIntoView();
 }
+
+var name = document.getElementById("name");
+var nom = document.getElementById("nom");
+
+function setname() {
+  nom.value = name.value;
+}
