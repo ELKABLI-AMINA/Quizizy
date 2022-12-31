@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
+ @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap'); 
 
 $color_1  : #0075ff;
 $color_2  : #777;
@@ -35,19 +36,38 @@ body {
 	font-family: $font-family_1;
 	background-color: $background-color_1;
 }
-.quiz-app {
+.nom{
+	font-family: 'Rubik Bubbles', cursive;
+	color: #bf8006;
+	text-align: center;
+	font-size: 1.4rem;
+	@media  screen and (min-width: 750px) {
+		font-size: 4rem;
+   }
+	
 	margin: auto;
-	border-radius: 10px;
-	width: 800px;
-	background-color: $background-color_2;
-	padding: 15px;
+	margin-top: 100px;
+	font-weight: 500px;
+}
+.quiz-app {
+	background-color: white ;
+	border-radius: 20px;
+	box-shadow: rgb(51, 50, 50) 0px 5px 15px;
+	width: 95%;
+	min-height: 60vh;
+	margin: auto;
+	padding: 10px;
+	margin-top: 60px;
+	@media  screen and (min-width: 750px) {
+		 width: 40%;
+	}
 
 	
 	.quiz-info {
 		display: flex;
 		background-color: $background-color_3;
 		padding: 20px;
-		
+		 
 
 		.count {
 			flex: 1;
@@ -64,7 +84,7 @@ body {
 	}
 	.answer-area {
 		background-color: $background-color_3;
-		padding: 20px;
+		padding: 10px;
 		border-radius: 2px;
 		.answer {
 			background-color: $background-color_4;
@@ -177,7 +197,8 @@ body {
 	@extend.button-5;
 	border: none;
 	top: 86%;
-	left: 49%;
+	left: 48%;
+	transform: translate(-50%, -50%);
 	background-color: #FF9900;
 		color: #fefcf9 !important;
 		padding: 6px;
@@ -188,22 +209,9 @@ body {
 		border: #bf8006 solid 1px;
 		border-radius: 10px;
 		cursor: pointer;
+		
 }
-.button-7 {
-	@extend.button-5;
-	top: 86%;
-	left: 38%;
-	background-color: #FF9900;
-		color: #fefcf9 !important;
-		padding: 6px;
-		padding-left: 15px;
-		padding-right: 15px;
-		margin-top: 10px;
-		font-size: 1.5rem;
-		border: #bf8006 solid 1px;
-		border-radius: 10px;
-		cursor: pointer;
-}
+
 .button-8 {
 	
 
@@ -217,6 +225,7 @@ body {
 		border: #bf8006 solid 1px;
 		border-radius: 10px;
 		cursor: pointer;
+		
 	              
 	              .button-8:active{
 		background-color: #ba7104;
@@ -225,8 +234,9 @@ body {
 	
 }
 .container {
-	height: 100vh;
+	height: 20vh;
 	text-align: center;
+	width: 100%;
 }
 .correctAs {
 	margin: auto;
@@ -249,6 +259,7 @@ body {
 }
 ul{
 	list-style: none;
+	padding-left: 0px;
 }
 
 .questionli{
@@ -277,11 +288,12 @@ ul{
 	
 	font-size: 16px;
 	position: absolute;
-	top: 55%;
-	padding: 3px;
-	left: 42%;
+	top: 57%;
+	padding: 15px;
+	left: 49%;
+	transform: translate(-50%, -50%);
 	text-align: center;
-	width: 180px;
+	width: 250px;
 	margin-right:10px;
 	background-color: none;
 	border: none;
@@ -294,8 +306,7 @@ ul{
 	left: 49%;
 	transform: translate(-50%, -50%);
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	
 	margin: 0 auto;
 	
               button{

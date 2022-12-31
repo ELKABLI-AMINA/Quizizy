@@ -67,7 +67,7 @@ function showQuestion(arrObj){
             `;
           }
         
-          document.getElementById("answers").innerHTML+=`<center><button class="button-8" onclick="checkcorerect()">Next</button></center>`
+          document.getElementById("answers").innerHTML+=`<center><button style="display:none;" id="next"class="button-8" onclick="checkcorerect()">Next</button></center>`
         count++;
        }
       else{
@@ -103,13 +103,15 @@ function showQuestion(arrObj){
                   <div class="img-center">
                   <img src="../assets/img/Frame-boos.png"  alt="">
                     <h3 class="missyou"> You are the Master</h3> </div>`
+                    var audio100 = new Audio('../assets/sound/app.mp3');
+                     audio100.play();
                   ;
 
                 }
                 document.getElementById("answers").innerHTML+=` <div class="container">
                 <h1 class="correctAs">Your Score Is: ${totalcorrect}/${arrObj.length}</h1>
                 <a href="quiz.html"><button class="button-6" role="button">Replay</button></a>
-                <button class="button-7" onclick="focusex()">Explication</button>
+                
                 </div>`;
                 document.getElementById("answers").innerHTML+=`<div  id="explicationn" class="explication">`;
                 for (let i of incorrect) { // la valeur       // in (propriétés)
@@ -132,14 +134,14 @@ function randoom(max){
    range.push(newnum);
   }
 }
-
-let selected;
+ let selected=[];
 let  addSelected = (tag)=>{  // arrow function
   selected=tag.id;
   tag.setAttribute("class","answer bg-regulare");
   let answers = document.getElementsByClassName("answer");
   for(let answer of answers){
     answer.setAttribute("class","answer");
+    document.getElementById("next").style.display="block";
   }
   tag.setAttribute("class","answer bg-regulare");
 }
@@ -168,11 +170,9 @@ let checkcorerect = ()=>{
 function focusex(){
   document.getElementById('explicationn').scrollIntoView();
 }
-let name =document.getElementById("name");
-let nom =document.getElementById("nom");
-function setname(){
-  nom.value=name.value;
-}
+
+document.getElementById("nom").innerHTML=localStorage.getItem("textvalue").toUpperCase();; 
+
 
 
 

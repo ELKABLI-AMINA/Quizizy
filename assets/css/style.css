@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -8,12 +9,35 @@ body {
   background-color: rgb(8, 35, 90);
 }
 
-.quiz-app {
+.nom {
+  font-family: "Rubik Bubbles", cursive;
+  color: #bf8006;
+  text-align: center;
+  font-size: 1.4rem;
   margin: auto;
-  border-radius: 10px;
-  width: 800px;
-  background-color: #f8f8f8;
-  padding: 15px;
+  margin-top: 100px;
+  font-weight: 500px;
+}
+@media screen and (min-width: 750px) {
+  .nom {
+    font-size: 4rem;
+  }
+}
+
+.quiz-app {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgb(51, 50, 50) 0px 5px 15px;
+  width: 95%;
+  min-height: 60vh;
+  margin: auto;
+  padding: 10px;
+  margin-top: 60px;
+}
+@media screen and (min-width: 750px) {
+  .quiz-app {
+    width: 40%;
+  }
 }
 .quiz-app .quiz-info {
   display: flex;
@@ -34,7 +58,7 @@ body {
 }
 .quiz-app .answer-area {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 2px;
 }
 .quiz-app .answer-area .answer {
@@ -128,7 +152,7 @@ body {
   background-color: #11f355 !important;
 }
 
-.button-5, .button-7, .button-6 {
+.button-5, .button-6 {
   height: 50px;
   width: 120px;
   margin: 10px 25px;
@@ -146,22 +170,8 @@ body {
 .button-6 {
   border: none;
   top: 86%;
-  left: 49%;
-  background-color: #FF9900;
-  color: #fefcf9 !important;
-  padding: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 10px;
-  font-size: 1.5rem;
-  border: #bf8006 solid 1px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.button-7 {
-  top: 86%;
-  left: 38%;
+  left: 48%;
+  transform: translate(-50%, -50%);
   background-color: #FF9900;
   color: #fefcf9 !important;
   padding: 6px;
@@ -191,8 +201,9 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 20vh;
   text-align: center;
+  width: 100%;
 }
 
 .correctAs {
@@ -220,6 +231,7 @@ body {
 
 ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 .questionli {
@@ -248,11 +260,12 @@ ul {
 .homeinput {
   font-size: 16px;
   position: absolute;
-  top: 55%;
-  padding: 3px;
-  left: 42%;
+  top: 57%;
+  padding: 15px;
+  left: 49%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  width: 180px;
+  width: 250px;
   margin-right: 10px;
   background-color: none;
   border: none;
@@ -266,8 +279,6 @@ ul {
   left: 49%;
   transform: translate(-50%, -50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
 }
 .btnn button {

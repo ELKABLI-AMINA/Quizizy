@@ -57,7 +57,7 @@
     {
         "question"   :"Where can a user find information about prohibited actions on the AWS infrastructure?",
         "answer"     :["AWS Trusted Advisor","AWS Identity and Access Management (IAM)","AWS Billing Console","AWS Acceptable Use Policy"],
-        "correct"    :3,
+        "correct"    :4,
         "Explication":"The AWS Acceptable Use Policy provides information regarding prohibited actions on the AWS infrastructure."
     }
     
