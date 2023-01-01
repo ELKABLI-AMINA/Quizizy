@@ -45,7 +45,7 @@ function getJson_data(){
     showQuestion(arrObj)
     }
   }
-  xhr.open("GET", "../assets/js/data.json", true);
+  xhr.open("GET", "assets/php/quiz.php", true);
   xhr.send();
 }
 let count = 0;
@@ -78,14 +78,14 @@ function showQuestion(arrObj){
                 if(corectRange<=25){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
-                <img src="../assets/img/Frame-focus.png" class="img_vector center"  alt="">
+                <img  class="emoji" src="assets/img/sad.png" alt="">
                 <h3 class="missyou"> Focus more you can do it</h3> </div>`
                 ;
 
                 }else if(corectRange<=55){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
-                <img src="../assets/img/Frame-good.png"  alt="">
+                <img class="emoji" src="assets/img/passable.png"  alt="">
                 <h3 class="missyou"> Good job continue</h3> </div>`
                 ;
 
@@ -93,7 +93,7 @@ function showQuestion(arrObj){
                 else if(corectRange<=90){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
-                <img src="../assets/img/Frame-exelent.png"   alt="">
+                <img class="emoji" src="assets/img/bien.png"   alt="">
                 <h3 class="missyou"> Exelent near to be Master</h3> </div>`
                 ;
 
@@ -101,9 +101,9 @@ function showQuestion(arrObj){
                 else{
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
-                  <img src="../assets/img/Frame-boos.png"  alt="">
+                  <img src="assets/img/exelent.png"  alt="">
                     <h3 class="missyou"> You are the Master</h3> </div>`
-                    var audio100 = new Audio('../assets/sound/app.mp3');
+                    var audio100 = new Audio('assets/sound/app.mp3');
                      audio100.play();
                   ;
 
@@ -151,7 +151,7 @@ let checkcorerect = ()=>{
     if(selected ==correct){
       totalcorrect+=1;
       document.getElementById(selected).setAttribute("class", "answer bg-green");
-      var audio = new Audio('../assets/sound/bonneR.mp3');
+      var audio = new Audio('assets/sound/bonneR.mp3');
          audio.play();
         
   }
@@ -159,7 +159,7 @@ let checkcorerect = ()=>{
           incorrect.push(range[count-1]);  // explication                   
           document.getElementById(selected).setAttribute("class", "answer bg-red");
           document.getElementById(correct).setAttribute("class", "answer bg-green");
-          var audioE = new Audio('../assets/sound/Echeck.mp3');
+          var audioE = new Audio('assets/sound/Echeck.mp3');
               audioE.play();
     }
   setTimeout(() => { if(count<arrObj.length){   

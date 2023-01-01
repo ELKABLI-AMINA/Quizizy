@@ -229,6 +229,10 @@ body {
   width: 100%;
 }
 
+.emoji {
+  width: 300px;
+}
+
 ul {
   list-style: none;
   padding-left: 0px;
