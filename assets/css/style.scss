@@ -113,7 +113,7 @@ body {
 ////// index 
  
 .body {
-                background-image: url("../img/cover.jpg");
+    background-image: url("../img/cover.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -140,10 +140,10 @@ body {
 	color: $color_3;
 }
 ////	timmer 
-		.base-timer__label.orange {
-			color: $color_7;
+.base-timer__label.orange {
+	color: $color_7;
       
-		}
+}
 	
 
 .base-timer__label.red {
@@ -200,36 +200,36 @@ body {
 	left: 48%;
 	transform: translate(-50%, -50%);
 	background-color: #FF9900;
-		color: #fefcf9 !important;
-		padding: 6px;
-		padding-left: 15px;
-		padding-right: 15px;
-		margin-top: 10px;
-		font-size: 1.5rem;
-		border: #bf8006 solid 1px;
-		border-radius: 10px;
-		cursor: pointer;
+	color: #fefcf9 !important;
+	padding: 6px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 10px;
+	font-size: 1.5rem;
+	border: #bf8006 solid 1px;
+	border-radius: 10px;
+	cursor: pointer;
 		
 }
 
 .button-8 {
 	
 
-		background-color: #FF9900;
-		color: #fefcf9 !important;
-		padding: 6px;
-		padding-left: 15px;
-		padding-right: 15px;
-		margin-top: 10px;
-		font-size: 1.5rem;
-		border: #bf8006 solid 1px;
-		border-radius: 10px;
-		cursor: pointer;
+	background-color: #FF9900;
+	color: #fefcf9 !important;
+	padding: 6px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 10px;
+	font-size: 1.5rem;
+	border: #bf8006 solid 1px;
+	border-radius: 10px;
+	cursor: pointer;
 		
 	              
-	              .button-8:active{
+ .button-8:active{
 		background-color: #ba7104;
-	              }
+ }
 
 	
 }
@@ -245,7 +245,7 @@ body {
 .bg-regulare {
 	background-color: $background-color_6 !important;
 }
-.missyou{
+.avis{
 	font-size:large;
 	color: $background-color_6;
 	font-weight:1000;
@@ -323,7 +323,7 @@ ul{
               button:active{
 	background-color: #ba7104;
               }
-              }
+ }
               
 
 

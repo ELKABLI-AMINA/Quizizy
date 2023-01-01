@@ -79,14 +79,14 @@ function showQuestion(arrObj){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
                 <img  class="emoji" src="assets/img/sad.png" alt="">
-                <h3 class="missyou"> Focus more you can do it</h3> </div>`
+                <h3 class="avis"> Focus more you can do it</h3> </div>`
                 ;
 
                 }else if(corectRange<=55){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
                 <img class="emoji" src="assets/img/passable.png"  alt="">
-                <h3 class="missyou"> Good job continue</h3> </div>`
+                <h3 class="avis"> Good job continue</h3> </div>`
                 ;
 
                 }
@@ -94,7 +94,7 @@ function showQuestion(arrObj){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
                 <img class="emoji" src="assets/img/bien.png"   alt="">
-                <h3 class="missyou"> Exelent near to be Master</h3> </div>`
+                <h3 class="avis"> Exelent near to be Master</h3> </div>`
                 ;
 
                 }
@@ -102,7 +102,7 @@ function showQuestion(arrObj){
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
                   <img src="assets/img/exelent.png"  alt="">
-                    <h3 class="missyou"> You are the Master</h3> </div>`
+                    <h3 class="avis"> You are the Master</h3> </div>`
                     var audio100 = new Audio('assets/sound/app.mp3');
                      audio100.play();
                   ;
@@ -167,9 +167,7 @@ let checkcorerect = ()=>{
     showQuestion(arrObj);
 }, 700);
 }
-function focusex(){
-  document.getElementById('explicationn').scrollIntoView();
-}
+
 
 document.getElementById("nom").innerHTML=localStorage.getItem("textvalue").toUpperCase();; 
 
