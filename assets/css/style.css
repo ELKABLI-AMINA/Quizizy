@@ -15,7 +15,7 @@ body {
   text-align: center;
   font-size: 1.4rem;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 20px;
   font-weight: 500px;
 }
 @media screen and (min-width: 750px) {
@@ -32,7 +32,6 @@ body {
   min-height: 60vh;
   margin: auto;
   padding: 10px;
-  margin-top: 60px;
 }
 @media screen and (min-width: 750px) {
   .quiz-app {
@@ -88,17 +87,6 @@ body {
   width: 100%;
   background-attachment: fixed;
   background-position: center;
-}
-
-.welcome {
-  position: absolute;
-  top: 40%;
-  margin: auto;
-  left: 28%;
-  font-family: "Shrikhand", cursive;
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgb(248, 223, 32);
 }
 
 .color-secces {
@@ -169,7 +157,7 @@ body {
 
 .button-6 {
   border: none;
-  top: 86%;
+  top: 100%;
   left: 48%;
   transform: translate(-50%, -50%);
   background-color: #FF9900;
@@ -208,7 +196,7 @@ body {
 
 .correctAs {
   margin: auto;
-  color: #0075ff;
+  color: rgb(245, 146, 32);
 }
 
 .bg-regulare {
@@ -217,7 +205,7 @@ body {
 
 .avis {
   font-size: large;
-  color: #0075ff;
+  color: rgb(245, 146, 32);
   font-weight: 1000;
 }
 
@@ -231,6 +219,7 @@ body {
 
 .emoji {
   width: 300px;
+  margin-top: -80px;
 }
 
 ul {
@@ -264,7 +253,7 @@ ul {
 .homeinput {
   font-size: 16px;
   position: absolute;
-  top: 57%;
+  top: 59%;
   padding: 15px;
   left: 49%;
   transform: translate(-50%, -50%);
@@ -275,6 +264,7 @@ ul {
   border: none;
   border: 0px;
   border-radius: 10px;
+  outline: none;
 }
 
 .btnn {

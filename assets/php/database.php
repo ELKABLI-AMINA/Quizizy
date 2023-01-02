@@ -1,19 +1,18 @@
 <?php 
-class dbconnection {
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $dbname = "quiz";
 
-    public  function connectToDb(){
-        try {
-            $conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
-          } catch(PDOException $e) {
+class Database{
+    public $host="localhost";
+    public $user="root";
+    public $pass="";
+    public $db_name="quizizy_amina";
+    public function connect(){
+        $rel="mysql:host=$this->host;dbname=$this->db_name";
+        try{
+            $connection=new PDO($rel,$this->user,$this->pass);
+        }catch(PDOException $e){
+            die($e->getMessage());
+        }
 
-          }
+        return $connection;
     }
- }
-
-?>
+}

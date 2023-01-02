@@ -37,6 +37,7 @@ body {
 	background-color: $background-color_1;
 }
 .nom{
+	
 	font-family: 'Rubik Bubbles', cursive;
 	color: #bf8006;
 	text-align: center;
@@ -46,7 +47,7 @@ body {
    }
 	
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 20px;
 	font-weight: 500px;
 }
 .quiz-app {
@@ -57,7 +58,7 @@ body {
 	min-height: 60vh;
 	margin: auto;
 	padding: 10px;
-	margin-top: 60px;
+	// margin-top: 20px;
 	@media  screen and (min-width: 750px) {
 		 width: 40%;
 	}
@@ -123,16 +124,7 @@ body {
 
 	
 
-.welcome {
-	position: absolute;
-	top: 40%;
-	margin: auto;
-	left: 28%;
-	font-family: $font-family_2;
-	font-size: 3rem;
-	font-weight: 700;
-	color: $color_5;
-}
+
 .color-secces {
 	color: $color_6;
 }
@@ -196,7 +188,7 @@ body {
 .button-6 {
 	@extend.button-5;
 	border: none;
-	top: 86%;
+	top: 100%;
 	left: 48%;
 	transform: translate(-50%, -50%);
 	background-color: #FF9900;
@@ -204,6 +196,8 @@ body {
 	padding: 6px;
 	padding-left: 15px;
 	padding-right: 15px;
+	
+	
 	margin-top: 10px;
 	font-size: 1.5rem;
 	border: #bf8006 solid 1px;
@@ -240,15 +234,16 @@ body {
 }
 .correctAs {
 	margin: auto;
-	color: $color_1;
+	color:  rgb(245, 146, 32);
 }
 .bg-regulare {
 	background-color: $background-color_6 !important;
 }
 .avis{
 	font-size:large;
-	color: $background-color_6;
+	color: rgb(245, 146, 32);
 	font-weight:1000;
+	
 }
 .img-center{
 	margin: auto;
@@ -259,6 +254,9 @@ body {
 }
 .emoji{
 	width: 300px;
+	margin-top: -80px;
+	
+		
 }
 ul{
 	list-style: none;
@@ -291,7 +289,7 @@ ul{
 	
 	font-size: 16px;
 	position: absolute;
-	top: 57%;
+	top: 59%;
 	padding: 15px;
 	left: 49%;
 	transform: translate(-50%, -50%);
@@ -302,6 +300,7 @@ ul{
 	border: none;
 	border: 0px;
 	border-radius: 10px;
+	outline: none;
 }
 .btnn{
 	position: absolute;

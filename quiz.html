@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Quiz App</title>
-                <link rel="stylesheet" href="assets/css/style.css">
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-<body>
-       <script>
-              swal(`Instructions:
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Quiz App</title>
+      <link rel="stylesheet" href="assets/css/style.css" />
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   </head>
+   <body>
+      <script>
+         swal(
+            `Instructions:
                    - Your have 30 sec to answer to question
                    - Your can't ignore a question
                    - There is some Questions that contain multiple choises
                    - Your can't ignore a question
                    - There is some Questions that contain multiple choises
                    
-                   Are you ready to Start ?`, {
-        buttons: {
-          cancel: "Run away",
-          defeat: "Start",
-        },
-      })
-      .then((value)=>{
-        switch (value){
-          case "defeat":
-          sleep(1000).then(()=> {
-              move(29);
-              // var audioE = new Audio('../assets/sound/Echeck.mp3');
-              // audioE.play();
-          });  
-            break;
-          default:
-          window.location.href ="index.html";
-        }
-      });
-      
-          </script>
-          <div class="nom">
-          WELCOME..<span  id="nom"></span>
-         </div> 
-                <div class="quiz-app" id="quiz_app">
-                         <div class="quiz-info">
-                               
-                                <div class="count">Questions Count: <span id="countquestion"></span> </div>
-                         </div> 
-                         <div class="quiz-area">
-                                <h2 id="question"></h2>
-                         </div>  
-                         <div class="answer-area" id="answers">
-                                 
-                         </div>
-                         
-                         <div class="bullets" id="progress">
-                            <div id="progressTime">
-                                   <div id="BarTime"></div>
-                            </div>
-                         </div>
-                </div>
-                
-    <script src="assets/js/main.js"></script>        
-</body>
+                   Are you ready to Start ?`,
+            {
+               buttons: {
+                  cancel: "Run away",
+                  defeat: "Start",
+               },
+            }
+         ).then((value) => {
+            switch (value) {
+               case "defeat":
+                  sleep(1000).then(() => {
+                     move(29);
+                     // var audioE = new Audio('../assets/sound/Echeck.mp3');
+                     // audioE.play();
+                  });
+                  break;
+               default:
+                  window.location.href = "index.html";
+            }
+         });
+      </script>
+      <div class="nom">WELCOME..<span id="nom"></span></div>
+      <div class="quiz-app" id="quiz_app">
+         <div class="quiz-info">
+            <div class="count">Questions Count: <span id="countquestion"></span></div>
+         </div>
+         <div class="quiz-area">
+            <h2 id="question"></h2>
+         </div>
+         <div class="answer-area" id="answers"></div>
+
+         <div class="bullets" id="progress">
+            <div id="progressTime">
+               <div id="BarTime"></div>
+            </div>
+         </div>
+      </div>
+
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>

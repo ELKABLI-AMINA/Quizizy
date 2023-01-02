@@ -81,7 +81,7 @@ function showQuestion(arrObj) {
     } else if (corectRange <= 90) {
       document.getElementById("answers").innerHTML = "\n                  <div class=\"img-center\">\n                <img class=\"emoji\" src=\"assets/img/bien.png\"   alt=\"\">\n                <h3 class=\"avis\"> Exelent near to be Master</h3> </div>";
     } else {
-      document.getElementById("answers").innerHTML = "\n                  <div class=\"img-center\">\n                  <img class=\"emoji\" src=\"assets/img/exelent.png\"  alt=\"\">\n                    <h3 class=\"avis\"> You are the Master</h3> </div>";
+      document.getElementById("answers").innerHTML = "\n                  <div class=\"img-center\">\n                  <img src=\"assets/img/exelent.png\"  alt=\"\">\n                    <h3 class=\"avis\"> You are the Master</h3> </div>";
       var audio100 = new Audio('assets/sound/app.mp3');
       audio100.play();
       ;

@@ -8,7 +8,7 @@ function move(deley) {
   let barTime = document.getElementById("BarTime");
   let width = 100;
   let smout = 0.01;
-  if(deley <10) smout = 0.1;   
+ 
 
   newDellay = (deley*1000*smout)/100;
   clearInterval(id_timer);
@@ -41,6 +41,8 @@ function getJson_data(){
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
     arrObj = JSON.parse(this.responseText);
+    console.log(arrObj)
+    
     randoom(arrObj.length);
     showQuestion(arrObj)
     }
@@ -62,7 +64,7 @@ function showQuestion(arrObj){
           
           for(let i=0;i<arrObj[range[count]].answer.length;i++){ 
             document.getElementById("answers").innerHTML+=`
-            <div class="answer"  onclick="addSelected(this)" id="${i+1}">  ${arrObj[range[count]].answer[i]}                                  
+            <div class="answer"  onclick="addSelected(this)" id="${arrObj[range[count]].answer[i]}">  ${arrObj[range[count]].answer[i]}                                  
             </div>
             `;
           }
@@ -101,7 +103,7 @@ function showQuestion(arrObj){
                 else{
                   document.getElementById("answers").innerHTML=`
                   <div class="img-center">
-                  <img src="assets/img/exelent.png"  alt="">
+                  <img class="emoji" src="assets/img/exelent.png"  alt="">
                     <h3 class="avis"> You are the Master</h3> </div>`
                     var audio100 = new Audio('assets/sound/app.mp3');
                      audio100.play();
@@ -115,7 +117,7 @@ function showQuestion(arrObj){
                 </div>`;
                 document.getElementById("answers").innerHTML+=`<div  id="explicationn" class="explication">`;
                 for (let i of incorrect) { // la valeur       // in (propriétés)
-                  document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question ${i}:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].answer[ arrObj[i].correct-1]} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
+                  document.getElementById("answers").innerHTML+=` <ul class="ul"><li class="questionli"> <strong>Question ${i}:</strong> ${ arrObj[i].question} </li> <li class="reponseli">  <strong>Reponse</strong> :${ arrObj[i].correct} </li> <li class="explicationli" > <strong>Explication:</strong> ${ arrObj[i].Explication} </li> </ul>`;
                 }
                 document.getElementById("answers").innerHTML+=`</div>`;
                 
