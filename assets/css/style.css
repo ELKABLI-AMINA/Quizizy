@@ -6,12 +6,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(8, 35, 90);
+  background-color: #232F3F;
 }
 
 .nom {
   font-family: "Rubik Bubbles", cursive;
-  color: #bf8006;
+  color: #FE9900;
   text-align: center;
   font-size: 1.4rem;
   margin: auto;
@@ -27,7 +27,6 @@ body {
 .quiz-app {
   background-color: white;
   border-radius: 20px;
-  box-shadow: rgb(51, 50, 50) 0px 5px 15px;
   width: 95%;
   min-height: 60vh;
   margin: auto;
@@ -50,10 +49,11 @@ body {
 .quiz-app .quiz-area {
   background-color: #fff;
   padding: 20px 20px 0;
-  margin-top: 15px;
 }
 .quiz-app .quiz-area h2 {
   margin: 0;
+  padding-top: 10px;
+  margin-bottom: 10;
 }
 .quiz-app .answer-area {
   background-color: #fff;
@@ -61,7 +61,7 @@ body {
   border-radius: 2px;
 }
 .quiz-app .answer-area .answer {
-  background-color: #f9f9f9;
+  background-color: #FE9900;
   padding: 15px;
   border-radius: 10px;
 }
@@ -89,6 +89,46 @@ body {
   background-position: center;
 }
 
+.swal-button {
+  background-color: #ff9900;
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: #f5e4ca;
+  color: black;
+}
+
+h4 {
+  color: #FE9900;
+  text-align: center;
+  margin-top: 7%;
+  font-size: 60px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.5333333333));
+  line-height: 0.07em;
+  outline: none;
+  -webkit-animation: animate 5s linear infinite;
+          animation: animate 5s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    box-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 40px #ff9900;
+  }
+}
+
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    box-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 40px #ff9900;
+  }
+}
 .color-secces {
   color: #52e824;
 }
@@ -228,7 +268,7 @@ ul {
 }
 
 .questionli {
-  background-color: #f6b83d;
+  background-color: #FE9900;
   color: white;
   padding: 5px 21px;
   border-radius: 25px;
@@ -253,7 +293,7 @@ ul {
 .homeinput {
   font-size: 16px;
   position: absolute;
-  top: 59%;
+  top: 65%;
   padding: 15px;
   left: 49%;
   transform: translate(-50%, -50%);
@@ -269,7 +309,7 @@ ul {
 
 .btnn {
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 49%;
   transform: translate(-50%, -50%);
   display: flex;

@@ -22,7 +22,7 @@ function move(deley) {
       } else {
           width-=smout;
           barTime.style.width = width + "%";
-          if(width<=65 && width>25 ) barTime.style.backgroundColor = "#fde24f";
+          if(width<=65 && width>25 ) barTime.style.backgroundColor = "#FE9900";
           else if(width<=35) barTime.style.backgroundColor = "red";
           else{
             barTime.style.backgroundColor = "green";
@@ -39,7 +39,7 @@ function getJson_data(){
 
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+    if (this.readyState == 4 && this.status == 200) { // readyState = l'état du requete 
     arrObj = JSON.parse(this.responseText);
     console.log(arrObj)
     
