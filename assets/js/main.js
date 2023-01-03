@@ -11,16 +11,16 @@ function move(deley) {
  
 
   newDellay = (deley*1000*smout)/100;
-  clearInterval(id_timer);
+  clearInterval(id_timer); 
   id_timer = setInterval(frame, newDellay);
   function frame() {
 
       if (width <=0) {
           clearInterval(id_timer);
-          
-          i = 0;
+        
       } else {
-          width-=smout;
+          width-=smout;    
+          // ( width = width - smout;)
           barTime.style.width = width + "%";
           if(width<=65 && width>25 ) barTime.style.backgroundColor = "#FE9900";
           else if(width<=35) barTime.style.backgroundColor = "red";
@@ -31,15 +31,13 @@ function move(deley) {
   }
 }
 
-function sleep (time){
-                return new Promise((resolve) => setTimeout(resolve, time));
-              }
+
 let arrObj=[];
 function getJson_data(){
 
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) { // readyState = l'état du requete 
+    if (this.readyState == 4 && this.status == 200) { 
     arrObj = JSON.parse(this.responseText);
     console.log(arrObj)
     
@@ -50,13 +48,14 @@ function getJson_data(){
   xhr.open("GET", "assets/php/quiz.php", true);
   xhr.send();
 }
+
 let count = 0;
 let correct=0;
 let totalcorrect=0;
 function showQuestion(arrObj){
        if(count<arrObj.length){
         move(30);
-        correct =arrObj[range[count]].correct; 
+        correct =arrObj[range[count]].correct;  
         document.getElementById("answers").innerHTML="";
         document.getElementById("question").innerText =arrObj[range[count]].question;
        
@@ -64,9 +63,11 @@ function showQuestion(arrObj){
           
           for(let i=0;i<arrObj[range[count]].answer.length;i++){ 
             document.getElementById("answers").innerHTML+=`
-            <div class="answer"  onclick="addSelected(this)" id="${arrObj[range[count]].answer[i]}">  ${arrObj[range[count]].answer[i]}                                  
+            <div class="answer"  onclick="addSelected(this)" id="${arrObj[range[count]].answer[i]}">   ${arrObj[range[count]].answer[i]}
+
             </div>
             `;
+            // affichage d'id et après la bonne réponse
           }
         
           document.getElementById("answers").innerHTML+=`<center><button style="display:none;" id="next"class="button-8" onclick="checkcorerect()">Next</button></center>`
@@ -129,6 +130,7 @@ getJson_data();
 function randoom(max){
   let newnum;
   for(let i=1;i<=max;i++){
+  
    newnum =  Math.floor(Math.random() * (max));
    while (range.includes(newnum)){
     newnum =  Math.floor(Math.random() * (max));
@@ -171,7 +173,47 @@ let checkcorerect = ()=>{
 }
 
 
-document.getElementById("nom").innerHTML=localStorage.getItem("textvalue").toUpperCase();; 
+document.getElementById("nom").innerHTML=localStorage.getItem("textvalue").toUpperCase();
+
+
+
+
+
+
+
+function startCountDown(){
+  let body1 = document.getElementById("quiz_app");
+  let body2 = document.getElementById("quiz_app2");
+  body2.style.display="block";
+  body1.style.display="none";
+  let cowntdown = document.getElementById("CountDown");
+  let countttt = 3;
+  let timeeer = setInterval(change,1000);
+  var audioK = new Audio('assets/sound/début.mp3');
+  
+  setTimeout(() =>{ 
+    audioK.play();
+}, 680);
+
+  function change(){
+   cowntdown.innerText = countttt;
+   if(countttt<0){
+     clearInterval(timeeer);
+     body2.style.display="none";
+     body1.style.display ="block";
+       setTimeout(() =>{ 
+           move(29);
+       }, 500);
+   }
+   countttt--;
+  }
+}
+
+
+
+
+
+
 
 
 

@@ -21,15 +21,25 @@ $options = array();
 foreach ($result as $row) {
     $options[] = $row;
 }
+// echo "<pre>";
+// print_r($data);
+// echo "</pre>";
 
 
-for ($i = 0; $i < sizeof($options); $i++) {
-    for ($j = 0; $j < sizeof($data); $j++) {
+// echo "############################################################";
+
+for ($i = 0; $i < sizeof($options); $i++) { // options
+    for ($j = 0; $j < sizeof($data); $j++) { // questions
         if ($options[$i]['question_id'] == $data[$j]['id']) {
             $data[$j]['answer'][] = $options[$i]['answer'];
         }
     }
 }
+
+
+// echo "<pre>";
+// print_r($data);
+// echo "</pre>";
 
 
 echo json_encode($data);

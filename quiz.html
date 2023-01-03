@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="assets/css/style.css" />
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    </head>
-   <body>
+   <body >
       <script>
          swal(
             `Instructions:
@@ -27,10 +27,7 @@
             }
          ).then((value) => {
             switch (value) {
-               case "defeat":
-                  sleep(1000).then(() => {
-                     move(29);
-                  });
+               case "defeat": startCountDown();
                   break;
                default:
                   window.location.href = "index.html";
@@ -38,7 +35,7 @@
          });
       </script>
       <div class="nom">WELCOME..<span id="nom"></span></div>
-      <div class="quiz-app" id="quiz_app">
+      <div class="quiz-app" id="quiz_app" style="display: none;">
          <div class="quiz-info">
             <div class="count">Questions Count: <span id="countquestion"></span></div>
          </div>
@@ -53,7 +50,12 @@
             </div>
          </div>
       </div>
+      <div class="quiz-app2" id="quiz_app2">
+         <h1 id="CountDown" class="CountDown"></h1>
+      </div>
 
       <script src="assets/js/main.js"></script>
    </body>
+
+  
 </html>

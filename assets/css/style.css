@@ -1,5 +1,23 @@
 @import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
-@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap";
+@-webkit-keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    box-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900;
+  }
+}
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    box-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -18,11 +36,6 @@ body {
   margin-top: 20px;
   font-weight: 500px;
 }
-@media screen and (min-width: 750px) {
-  .nom {
-    font-size: 4rem;
-  }
-}
 
 .quiz-app {
   background-color: white;
@@ -30,6 +43,7 @@ body {
   width: 95%;
   min-height: 60vh;
   margin: auto;
+  margin-top: 30px;
   padding: 10px;
 }
 @media screen and (min-width: 750px) {
@@ -92,7 +106,6 @@ body {
 .swal-button {
   background-color: #ff9900;
 }
-
 .swal-button:not([disabled]):hover {
   background-color: #f5e4ca;
   color: black;
@@ -107,28 +120,9 @@ h4 {
   line-height: 0.07em;
   outline: none;
   -webkit-animation: animate 5s linear infinite;
-          animation: animate 5s linear infinite;
+  animation: animate 5s linear infinite;
 }
 
-@-webkit-keyframes animate {
-  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
-    box-shadow: none;
-  }
-  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
-    color: #fff;
-    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 40px #ff9900;
-  }
-}
-
-@keyframes animate {
-  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
-    box-shadow: none;
-  }
-  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
-    color: #fff;
-    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 40px #ff9900;
-  }
-}
 .color-secces {
   color: #52e824;
 }
@@ -180,7 +174,7 @@ h4 {
   background-color: #11f355 !important;
 }
 
-.button-5, .button-6 {
+.button-5 {
   height: 50px;
   width: 120px;
   margin: 10px 25px;
@@ -196,10 +190,15 @@ h4 {
 }
 
 .button-6 {
+  height: 50px;
+  width: 120px;
+  margin: auto;
   border: none;
-  top: 86%;
-  left: 48%;
-  transform: translate(-50%, -50%);
+  outline: none;
+  color: #e7f1fa;
+  background: #bf8006;
+  font-size: 18px;
+  cursor: pointer;
   background-color: #FF9900;
   color: #fefcf9 !important;
   padding: 6px;
@@ -325,4 +324,25 @@ ul {
 }
 .btnn button:active {
   background-color: #ba7104;
+}
+
+.CountDown {
+  color: #ff9900;
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.wlecome1 {
+  margin-top: 40%;
+  font-size: 1.4rem;
+}
+@media screen and (min-width: 750px) {
+  .wlecome1 {
+    font-size: 4rem;
+    margin-top: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -15,21 +15,15 @@ function move(deley) {
   function frame() {
     if (width <= 0) {
       clearInterval(id_timer);
-      i = 0;
     } else {
-      width -= smout;
+      width -= smout; // ( width = width - smout;)
+
       barTime.style.width = width + "%";
       if (width <= 65 && width > 25) barTime.style.backgroundColor = "#FE9900";else if (width <= 35) barTime.style.backgroundColor = "red";else {
         barTime.style.backgroundColor = "green";
       }
     }
   }
-}
-
-function sleep(time) {
-  return new Promise(function (resolve) {
-    return setTimeout(resolve, time);
-  });
 }
 
 var arrObj = [];
@@ -39,7 +33,6 @@ function getJson_data() {
 
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // readyState = l'état du requete 
       arrObj = JSON.parse(this.responseText);
       console.log(arrObj);
       randoom(arrObj.length);
@@ -63,8 +56,8 @@ function showQuestion(arrObj) {
     document.getElementById("question").innerText = arrObj[range[count]].question;
     document.getElementById("countquestion").innerText = count + 1 + "/" + arrObj.length;
 
-    for (var _i = 0; _i < arrObj[range[count]].answer.length; _i++) {
-      document.getElementById("answers").innerHTML += "\n            <div class=\"answer\"  onclick=\"addSelected(this)\" id=\"".concat(arrObj[range[count]].answer[_i], "\">  ").concat(arrObj[range[count]].answer[_i], "                                  \n            </div>\n            ");
+    for (var i = 0; i < arrObj[range[count]].answer.length; i++) {
+      document.getElementById("answers").innerHTML += "\n            <div class=\"answer\"  onclick=\"addSelected(this)\" id=\"".concat(arrObj[range[count]].answer[i], "\">   ").concat(arrObj[range[count]].answer[i], "\n\n            </div>\n            "); // affichage d'id et après la bonne réponse
     }
 
     document.getElementById("answers").innerHTML += "<center><button style=\"display:none;\" id=\"next\"class=\"button-8\" onclick=\"checkcorerect()\">Next</button></center>";
@@ -96,9 +89,9 @@ function showQuestion(arrObj) {
 
     try {
       for (var _iterator = incorrect[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var _i2 = _step.value;
+        var _i = _step.value;
         // la valeur       // in (propriétés)
-        document.getElementById("answers").innerHTML += " <ul class=\"ul\"><li class=\"questionli\"> <strong>Question ".concat(_i2, ":</strong> ").concat(arrObj[_i2].question, " </li> <li class=\"reponseli\">  <strong>Reponse</strong> :").concat(arrObj[_i2].correct, " </li> <li class=\"explicationli\" > <strong>Explication:</strong> ").concat(arrObj[_i2].Explication, " </li> </ul>");
+        document.getElementById("answers").innerHTML += " <ul class=\"ul\"><li class=\"questionli\"> <strong>Question ".concat(_i, ":</strong> ").concat(arrObj[_i].question, " </li> <li class=\"reponseli\">  <strong>Reponse</strong> :").concat(arrObj[_i].correct, " </li> <li class=\"explicationli\" > <strong>Explication:</strong> ").concat(arrObj[_i].Explication, " </li> </ul>");
       }
     } catch (err) {
       _didIteratorError = true;
@@ -124,7 +117,7 @@ getJson_data();
 function randoom(max) {
   var newnum;
 
-  for (var _i3 = 1; _i3 <= max; _i3++) {
+  for (var i = 1; i <= max; i++) {
     newnum = Math.floor(Math.random() * max);
 
     while (range.includes(newnum)) {
@@ -196,4 +189,32 @@ var checkcorerect = function checkcorerect() {
 };
 
 document.getElementById("nom").innerHTML = localStorage.getItem("textvalue").toUpperCase();
-;
+
+function startCountDown() {
+  var body1 = document.getElementById("quiz_app");
+  var body2 = document.getElementById("quiz_app2");
+  body2.style.display = "block";
+  body1.style.display = "none";
+  var cowntdown = document.getElementById("CountDown");
+  var countttt = 3;
+  var timeeer = setInterval(change, 1000);
+  var audioK = new Audio('assets/sound/début.mp3');
+  setTimeout(function () {
+    audioK.play();
+  }, 680);
+
+  function change() {
+    cowntdown.innerText = countttt;
+
+    if (countttt < 0) {
+      clearInterval(timeeer);
+      body2.style.display = "none";
+      body1.style.display = "block";
+      setTimeout(function () {
+        move(29);
+      }, 500);
+    }
+
+    countttt--;
+  }
+}
