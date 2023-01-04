@@ -41,7 +41,7 @@ function getJson_data(){
     arrObj = JSON.parse(this.responseText);
     console.log(arrObj)
     
-    randoom(arrObj.length);
+    randoom(arrObj.length); //stock dans le range d'une façon aléatoire des valeurs entre 0 et 9
     showQuestion(arrObj)
     }
   }
@@ -138,10 +138,9 @@ function randoom(max){
    range.push(newnum);
   }
 }
- let selected=[];
+ let selected;
 let  addSelected = (tag)=>{  // arrow function
   selected=tag.id;
-  tag.setAttribute("class","answer bg-regulare");
   let answers = document.getElementsByClassName("answer");
   for(let answer of answers){
     answer.setAttribute("class","answer");
@@ -160,7 +159,7 @@ let checkcorerect = ()=>{
         
   }
   else{
-          incorrect.push(range[count-1]);  // explication                   
+          incorrect.push(range[count-1]);  // explication          
           document.getElementById(selected).setAttribute("class", "answer bg-red");
           document.getElementById(correct).setAttribute("class", "answer bg-green");
           var audioE = new Audio('assets/sound/Echeck.mp3');

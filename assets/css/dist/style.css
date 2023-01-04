@@ -34,7 +34,12 @@ body {
   font-size: 1.4rem;
   margin: auto;
   margin-top: 20px;
-  font-weight: 500px;
+  font-weight: 500;
+}
+@media screen and (min-width: 676px) {
+  .nom {
+    font-size: 3rem;
+  }
 }
 
 .quiz-app {
@@ -337,12 +342,12 @@ ul {
 }
 
 .wlecome1 {
-  margin-top: 40%;
-  font-size: 1.4rem;
+  margin-top: 100px;
+  font-size: 3rem;
 }
-@media screen and (min-width: 750px) {
+@media (max-width: 676px) {
   .wlecome1 {
-    font-size: 4rem;
-    margin-top: 100px;
+    font-size: 1.5rem;
+    margin-top: 40%;
   }
 }

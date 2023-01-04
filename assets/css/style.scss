@@ -65,7 +65,10 @@ body {
 	font-size: 1.4rem;
 	margin: auto;
 	margin-top: 20px;
-	font-weight: 500px;
+	font-weight: 500;
+	@media screen and (min-width:676px){
+		font-size: 3rem;
+	}
 }
 .quiz-app {
 	background-color: $background-color_2;
@@ -343,11 +346,11 @@ ul {
 	font-weight: 800;
 }
 .wlecome1{
-	margin-top: 40%;
-	font-size: 1.4rem;
-	@media screen and (min-width : 750px){
-		font-size: 4rem;
-		margin-top: 100px;
+	margin-top: 100px;
+	font-size: 3rem;
+	@media (max-width : 676px){
+		font-size: 1.5rem;
+		margin-top: 40%;
 	}
 }
 

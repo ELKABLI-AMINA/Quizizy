@@ -35,7 +35,8 @@ function getJson_data() {
     if (this.readyState == 4 && this.status == 200) {
       arrObj = JSON.parse(this.responseText);
       console.log(arrObj);
-      randoom(arrObj.length);
+      randoom(arrObj.length); //stock dans le range d'une façon aléatoire des valeurs entre 0 et 9
+
       showQuestion(arrObj);
     }
   };
@@ -128,12 +129,11 @@ function randoom(max) {
   }
 }
 
-var selected = [];
+var selected;
 
 var addSelected = function addSelected(tag) {
   // arrow function
   selected = tag.id;
-  tag.setAttribute("class", "answer bg-regulare");
   var answers = document.getElementsByClassName("answer");
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
@@ -171,7 +171,7 @@ var checkcorerect = function checkcorerect() {
     var audio = new Audio('assets/sound/bonneR.mp3');
     audio.play();
   } else {
-    incorrect.push(range[count - 1]); // explication                   
+    incorrect.push(range[count - 1]); // explication          
 
     document.getElementById(selected).setAttribute("class", "answer bg-red");
     document.getElementById(correct).setAttribute("class", "answer bg-green");
