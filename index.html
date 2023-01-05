@@ -9,11 +9,11 @@
    </head>
    <body class="body">
     <h4 class="wlecome1">WELCOME TO AWS QUIZ</h4>
-      <input type="text" class="homeinput" id="name" placeholder="Enter your Name" />
+      <input type="text" class="homeinput" id="name" onkeyup="validateName()"  placeholder="Enter your Name" />
       
       <a href="quiz.html"
          ><div class="btnn">
-            <button type="submit" value="Click" style="color: #ff9900" onclick="setname()">Click Here</button>
+            <button type="submit"  id="checkbtn" value="Click" disabled style="color: #ff9900" onclick="setname()">Click Here</button>
          </div></a
       >
 
